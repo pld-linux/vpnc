@@ -1,6 +1,6 @@
 %define		_beta	rm+zomb.1
 Summary:	VPN Client for Cisco EasyVPN
-Summary(pl):	Klient vpn dla Cisco EasyVPN
+Summary(pl):	Klient VPN dla Cisco EasyVPN
 Name:		vpnc
 Version:	0.2
 Release:	0.%{_beta}.1
@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A VPN client compatible with Cisco's EasyVPN equipment.
 
 %description -l pl
-Klient vpn kompatybilny ze sprzêtem Cisco obs³uguj±cym EasyVPN.
+Klient VPN kompatybilny ze sprzêtem Cisco obs³uguj±cym EasyVPN.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_beta}
