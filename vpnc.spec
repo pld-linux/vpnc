@@ -1,13 +1,12 @@
-%define		_beta	rm+zomb.1
 Summary:	VPN Client for Cisco EasyVPN
 Summary(pl):	Klient VPN dla Cisco EasyVPN
 Name:		vpnc
-Version:	0.2
-Release:	0.%{_beta}.1
+Version:	0.3.2
+Release:	1
 License:	GPL
 Group:		Networking/Daemons
-Source0:	http://www.unix-ag.uni-kl.de/~massar/vpnc/%{name}-%{version}-%{_beta}.tar.gz
-# Source0-md5:	ded67de747874c4245ed8405146dc94a
+Source0:	http://www.unix-ag.uni-kl.de/~massar/vpnc/%{name}-%{version}.tar.gz
+# Source0-md5:	aaccdffc5656095a45dfe87c5bf612cb
 URL:		http://www.unix-ag.uni-kl.de/~massar/vpnc/
 BuildRequires:	libgcrypt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -19,11 +18,11 @@ A VPN client compatible with Cisco's EasyVPN equipment.
 Klient VPN kompatybilny ze sprzêtem Cisco obs³uguj±cym EasyVPN.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_beta}
+%setup -q 
 
 %build
 %{__make} \
-	CFLAGS="%{rpmcflags} -g '-DVERSION=\"%{version}-%{_beta}\"'"
+	CFLAGS="%{rpmcflags} -g '-DVERSION=\"%{version}\"'"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -31,6 +30,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir},%{_mandir}/man8}
 
 install %{name}		$RPM_BUILD_ROOT%{_bindir}
 install %{name}-*	$RPM_BUILD_ROOT%{_bindir}
+install pcf2vpnc	$RPM_BUILD_ROOT%{_bindir}
 install %{name}.conf	$RPM_BUILD_ROOT%{_sysconfdir}
 install %{name}.8	$RPM_BUILD_ROOT%{_mandir}/man8
 
