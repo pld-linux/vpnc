@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A VPN client compatible with Cisco's EasyVPN equipment.
 
 %description -l pl
-Klient vpn kompatybilny z sprzetem cisco obs³uguj±cym EasyVPN.
+Klient vpn kompatybilny ze sprzêtem Cisco obs³uguj±cym EasyVPN.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_beta}
