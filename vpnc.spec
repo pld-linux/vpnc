@@ -7,8 +7,7 @@ License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.unix-ag.uni-kl.de/~massar/vpnc/%{name}-%{version}.tar.gz
 # Source0-md5:	aaccdffc5656095a45dfe87c5bf612cb
-Source1:	http://cna.us.edu.pl/~misiek/%{name}cfg
-# Source1-md5:	7d6ca68f9d1778416151e76290fe0aef
+Source1:	%{name}cfg
 URL:		http://www.unix-ag.uni-kl.de/~massar/vpnc/
 BuildRequires:	libgcrypt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
