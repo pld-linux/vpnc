@@ -25,7 +25,8 @@ Klient VPN kompatybilny ze sprzêtem Cisco obs³uguj±cym EasyVPN.
 
 %build
 %{__make} \
-	CFLAGS="%{rpmcflags} -g '-DVERSION=\"%{version}\"'"
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -Wall '-DVERSION=\"%{version}\"'"
 
 %install
 rm -rf $RPM_BUILD_ROOT
