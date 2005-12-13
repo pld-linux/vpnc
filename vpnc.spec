@@ -20,7 +20,7 @@ A VPN client compatible with Cisco's EasyVPN equipment.
 Klient VPN kompatybilny ze sprzêtem Cisco obs³uguj±cym EasyVPN.
 
 %prep
-%setup -q 
+%setup -q
 %patch0 -p1
 
 %build
@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/%{name}.conf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}.conf
 %{_sysconfdir}/%{name}
 %attr(755,root,root) %{_bindir}/*
 %dir /var/run/%{name}
