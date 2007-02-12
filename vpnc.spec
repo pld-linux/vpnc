@@ -1,5 +1,5 @@
 Summary:	VPN Client for Cisco EasyVPN
-Summary(pl.UTF-8):   Klient VPN dla Cisco EasyVPN
+Summary(pl.UTF-8):	Klient VPN dla Cisco EasyVPN
 Name:		vpnc
 Version:	0.3.3
 Release:	2
