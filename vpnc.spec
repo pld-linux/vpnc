@@ -1,5 +1,5 @@
 Summary:	VPN Client for Cisco EasyVPN
-Summary(pl):	Klient VPN dla Cisco EasyVPN
+Summary(pl.UTF-8):   Klient VPN dla Cisco EasyVPN
 Name:		vpnc
 Version:	0.3.3
 Release:	2
@@ -16,8 +16,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A VPN client compatible with Cisco's EasyVPN equipment.
 
-%description -l pl
-Klient VPN kompatybilny ze sprzêtem Cisco obs³uguj±cym EasyVPN.
+%description -l pl.UTF-8
+Klient VPN kompatybilny ze sprzÄ™tem Cisco obsÅ‚ugujÄ…cym EasyVPN.
 
 %prep
 %setup -q
