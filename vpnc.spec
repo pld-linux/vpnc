@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_with	openssl		# with openssl support (possible GPL violation)
+#
 Summary:	VPN Client for Cisco EasyVPN
 Summary(pl.UTF-8):	Klient VPN dla Cisco EasyVPN
 Name:		vpnc
@@ -11,6 +15,7 @@ Source1:	%{name}cfg
 Patch0:		%{name}-bash.patch
 URL:		http://www.unix-ag.uni-kl.de/~massar/vpnc/
 BuildRequires:	libgcrypt-devel
+%{?with_openssl:BuildRequires:	openssl-devel}
 BuildRequires:	perl-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +32,8 @@ Klient VPN kompatybilny ze sprzętem Cisco obsługującym EasyVPN.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -Wall '-DVERSION=\"%{version}\"'"
+	CFLAGS="%{rpmcflags} -Wall '-DVERSION=\"%{version}\"'%{?with_openssl: -DOPENSSL_GPL_VIOLATION}" \
+	%{?with_openssl:OPENSSLLIBS="-lcrypto"}
 
 %install
 rm -rf $RPM_BUILD_ROOT
