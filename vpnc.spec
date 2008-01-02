@@ -11,6 +11,7 @@ Source1:	%{name}cfg
 Patch0:		%{name}-bash.patch
 URL:		http://www.unix-ag.uni-kl.de/~massar/vpnc/
 BuildRequires:	libgcrypt-devel
+BuildRequires:	perl-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README TODO
+%doc ChangeLog README TODO
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}.conf
 %{_sysconfdir}/%{name}
 %attr(755,root,root) %{_bindir}/*
