@@ -12,6 +12,7 @@ Group:		Networking/Daemons
 Source0:	http://www.unix-ag.uni-kl.de/~massar/vpnc/%{name}-%{version}.tar.gz
 # Source0-md5:	4378f9551d5b077e1770bbe09995afb3
 Source1:	%{name}cfg
+Source2:	%{name}.tmpfiles
 Patch0:		%{name}-bash.patch
 URL:		http://www.unix-ag.uni-kl.de/~massar/vpnc/
 BuildRequires:	libgcrypt-devel
@@ -38,7 +39,8 @@ Klient VPN kompatybilny ze sprzętem Cisco obsługującym EasyVPN.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_mandir}/man{1,8},/var/run/%{name}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_mandir}/man{1,8},/var/run/%{name}} \
+	$RPM_BUILD_ROOT/usr/lib/tmpfiles.d
 
 install %{name}		$RPM_BUILD_ROOT%{_bindir}
 install cisco-decrypt	$RPM_BUILD_ROOT%{_bindir}
@@ -50,6 +52,8 @@ install %{name}.8	$RPM_BUILD_ROOT%{_mandir}/man8
 install *.1		$RPM_BUILD_ROOT%{_mandir}/man1
 ln -sf %{_bindir}/vpnc-script $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 
+install %{SOURCE2} $RPM_BUILD_ROOT/usr/lib/tmpfiles.d/%{name}.conf
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -60,5 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/%{name}
 %attr(755,root,root) %{_bindir}/*
 %dir /var/run/%{name}
+/usr/lib/tmpfiles.d/%{name}.conf
 %{_mandir}/man8/*
 %{_mandir}/man1/*
