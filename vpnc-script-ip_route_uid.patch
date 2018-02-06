@@ -1,0 +1,12 @@
+diff -ruNp vpnc-0.5.3.orig/vpnc-script.in vpnc-0.5.3/vpnc-script.in
+--- vpnc-0.5.3.orig/vpnc-script.in	2008-11-19 21:55:51.000000000 +0100
++++ vpnc-0.5.3/vpnc-script.in	2018-02-06 23:46:51.680260349 +0100
+@@ -116,7 +116,7 @@ destroy_tun_device() {
+ 
+ if [ -n "$IPROUTE" ]; then
+ 	fix_ip_get_output () {
+-		sed 's/cache//;s/metric \?[0-9]\+ [0-9]\+//g;s/hoplimit [0-9]\+//g'
++		sed 's/cache//;s/metric \?[0-9]\+ [0-9]\+//g;s/hoplimit [0-9]\+//g;s/uid [0-9]\+//g'
+ 	}
+ 
+ 	set_vpngateway_route() {
