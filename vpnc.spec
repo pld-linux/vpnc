@@ -6,7 +6,7 @@ Summary:	VPN Client for Cisco EasyVPN
 Summary(pl.UTF-8):	Klient VPN dla Cisco EasyVPN
 Name:		vpnc
 Version:	0.5.3
-Release:	5
+Release:	6
 License:	GPL v2+
 Group:		Networking/Daemons
 Source0:	http://www.unix-ag.uni-kl.de/~massar/vpnc/%{name}-%{version}.tar.gz
